@@ -1,0 +1,81 @@
+# ============================================================
+# iwc-cetaceans-abundances-subareas
+# ============================================================
+
+# ------------------------------------------------------------
+# R / RStudio local files
+# ------------------------------------------------------------
+.Rproj.user/
+.Rhistory
+.RData
+.Ruserdata
+
+# ------------------------------------------------------------
+# QGIS project files
+# ------------------------------------------------------------
+*.qgz
+*.qgs
+
+# ------------------------------------------------------------
+# Operating-system and temporary files
+# ------------------------------------------------------------
+.DS_Store
+Thumbs.db
+desktop.ini
+__MACOSX/
+._*
+~$*
+*.tmp
+
+# GeoPackage temporary journal files
+*.gpkg-shm
+*.gpkg-wal
+
+# ------------------------------------------------------------
+# Duplicate archives / legacy working material
+# ------------------------------------------------------------
+*.zip
+*.7z
+/old/
+
+# ------------------------------------------------------------
+# Third-party datasets
+# ------------------------------------------------------------
+# Third-party datasets used by the scripts are stored outside
+# this repository in the sibling ../thirdpartydata/ directory.
+# Ignore any copy accidentally placed inside this repository.
+/thirdpartydata/
+
+# ------------------------------------------------------------
+# Data supplied directly by organisations/researchers for which
+# public redistribution permission is still pending
+# ------------------------------------------------------------
+
+# NAMMCO Secretariat: NASS/TNASS survey blocks and associated files
+/NASS and NILS effort/NASS and NILS effort/
+
+# Norwegian Institute of Marine Research / Havforskningsinstituttet:
+# NILS survey polygons and associated supplied files
+/NASS and NILS effort/fromhino/
+/NASS and NILS effort/NAMMCO-Havforskningsinstituttet/
+/Norwegian SMAs/
+
+# Martin Biuw / CCAMLR-IWC survey strata:
+# permission to redistribute was given
+#/SH-Fin/input_provided_by_researchers/MB1/
+
+# ------------------------------------------------------------
+# Intentionally retained in the repository
+# ------------------------------------------------------------
+# - folders named georeferenced/ and their intermediate/output files
+# - project-created polygons
+# - final subarea shapefiles
+# - R scripts
+# - GBIF files retained under NA-NArht/from_GBIF/
+# - D. Palka / North Pacific humpback assessment-area files
+# - Heide-Jørgensen 2024 Greenland survey-area files
+# - Herr / Viquerat survey-area files
+# - Williams et al. (2006) survey-region files
+#
+# These form part of the documented spatial provenance/workflow
+# or have permission for inclusion in the public repository.
