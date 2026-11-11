@@ -50,8 +50,16 @@ sen <- st_read("NP-Mi/NP-minkes-subareas.shp") %>%
   mutate(survey = list(c("","JD","JARPNII","KD","JARPN"))) %>% unnest(survey)
 mappingf(sen)
 
+#WNP = 1+2
+wnp <- st_sf(
+  geometry = st_union(st_geometry(out1))
+)  %>% 
+  mutate(subareas = "WNP", species = "Brd", accuracy = "accurate", large_area="NP", source = "derived from known coordinates - see original IWC maps") %>% 
+  mutate(survey = list(c("","JARPN","POWER+JARPNII"))) %>% tidyr::unnest(survey)
+mappingf(wnp)
+
 #### final output ####
-output <- dplyr::bind_rows(list(jd,jarpn,pjarpn2,Hawaii,ETP,sen)) %>% 
+output <- dplyr::bind_rows(list(jd,jarpn,pjarpn2,Hawaii,ETP,sen,wnp)) %>% 
   mutate(large_area = "NP", species = "Brd")
 View(output)
 #make map
