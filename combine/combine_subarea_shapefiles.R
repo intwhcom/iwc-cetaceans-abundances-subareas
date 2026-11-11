@@ -72,12 +72,14 @@ subarea_files <- tibble::tribble(
   "SHAMi", "SH", "SH-AMi/SH-AMi-subareas.R", "SH-AMi/SH-AMi-subareas.shp", TRUE, FALSE,
   "SHBlu", "SH", "SH-Blu/SH-Blu-subareas.R", "SH-Blu/SH-Blu-subareas.shp", TRUE, FALSE,
   "SHFin", "SH", "SH-Fin/SH-Fin-subareas.R", "SH-Fin/SH-Fin-subareas.shp", TRUE, FALSE,
-  "SHFin", "SH", "SH-Franciscana/SH-Fra-subareas.R", "SH-Franciscana/SH-Fra-subareas.shp", TRUE, FALSE,
+  "SHFpn", "SH", "SH-Franciscana/SH-Fpn-subareas.R", "SH-Franciscana/SH-Fpn-subareas.shp", TRUE, FALSE,
   "SHHbk", "SH", "SH-Hbk/SH-Hbk-subareas.R", "SH-Hbk/SH-Hbk-subareas.shp", TRUE, FALSE,
   "SHMaui", "SH", "SH-Hectors/SP-Hec-Maui-subareas.R", "SH-Hectors/SP-Maui-subareas.shp", TRUE, FALSE,
   "SHCircVar", "SH", "SH-Sei-HuDol-KiWa-SoBottlW/SH-Sei-HuDol-SoBottlW-KiWa-circumpolar.R", "SH-Sei-HuDol-KiWa-SoBottlW/SH-various-circumpolar-subareas.shp", TRUE, FALSE,
   "SHSpr", "SH", "SH-Spr/SH-Spr-subareas.R", "SH-Spr/SH-Spr-subareas.shp", TRUE, FALSE,
-  "SHSrht", "SH", "SH-Srht/SH-Srht-subareas.R", "SH-Srht/SH-Srht-subareas.shp", TRUE, FALSE
+  "SHSrht", "SH", "SH-Srht/SH-Srht-subareas.R", "SH-Srht/SH-Srht-subareas.shp", TRUE, FALSE,
+  "NAHrp", "NA", "NA-Hrp/NA-Hrp-subareas.R", "NA-Hrp/NA-Hrp-subareas.shp", TRUE, FALSE,
+  "NAWhBek", "NA", "NA-WhBek/NA-WhBek-subareas.R", "NA-WhBek/NA-WhBek-subareas.shp", TRUE, FALSE
 )
 
 # ---- 3. Workflow --------------------------------------------------------------
@@ -202,3 +204,4 @@ NorthAtlanticSubs <- combined_subareas$`NA`
 NorthPacificSubs <- combined_subareas$NP
 SouthernHemisphereSubs <- combined_subareas$SH
 allsubareas <- combined_subareas$`all`
+
