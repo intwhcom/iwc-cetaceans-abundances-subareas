@@ -342,6 +342,9 @@ The NOAA metadata states that government-server information is public domain unl
 
 The raw dataset is not included in this repository; users should download it directly from NOAA.
 
+
+The folder `NA-Fin/from_GOM-GB_Regulated_Mesh_Areas/` contains **project-created polygons developed for the North Atlantic fin whale workflow using the NOAA Gulf of Maine–Georges Bank Regulated Mesh Areas as a spatial basis**. These files are **not copies of the original NOAA raw dataset**. They are derived spatial products created within this project from the NOAA source layer and are retained to document the construction of the relevant abundance subareas.
+
 ---
 
 ## 9. NOAA / US Large Marine Ecosystem Program — Large Marine Ecosystems
@@ -476,7 +479,7 @@ For each case, the repository records the provider, the scientific context in wh
 
 Where permission to redistribute has not yet been confirmed, the files will not be included in the public repository. The corresponding R scripts and documentation can nevertheless identify the source and explain how the files were used.
 
-## NAMMCO Secretariat — NASS and TNASS survey blocks
+## NAMMCO Secretariat — NASS, TNASS and NILS survey blocks
 
 **Provider:** North Atlantic Marine Mammal Commission (NAMMCO) Secretariat
 
@@ -485,14 +488,22 @@ Where permission to redistribute has not yet been confirmed, the files will not 
 - NASS survey blocks including `Blk87`, `Blk89`, `Blk95`, `Blk01`, `Blk07` and `Blk15`
 - TNASS 2007 survey blocks
 - NASS 2015 survey blocks and associated spatial files
+- NILS survey blocks and associated spatial information where applicable
 
-These files were provided by the NAMMCO Secretariat. NAMMCO compiled the survey-block and survey-stratum information from spatial data supplied by the countries participating in and implementing the North Atlantic Sightings Surveys (NASS and TNASS).
+These files were provided through the NAMMCO Secretariat. NAMMCO compiled survey-block and survey-stratum information from spatial data supplied by the countries participating in and implementing the North Atlantic Sightings Surveys (NASS and TNASS) and associated Norwegian survey work.
 
 The files are used in this repository to reconstruct survey areas associated with abundance estimates in the IWC abundance database. Depending on the analysis, individual blocks or strata are selected, combined, dissolved or otherwise processed to represent the spatial extent associated with a particular abundance estimate.
 
-The original source files remain attributable to NAMMCO and to the national survey programmes from which the spatial information was compiled.
+The original source files remain attributable to NAMMCO and to the national institutes responsible for the relevant survey effort.
 
-**Redistribution status:** Permission to make these source files publicly available in this repository has been requested from the NAMMCO Secretariat and is currently awaiting confirmation. Until permission is received, the original files should not be included in the public repository.
+**Redistribution status:** Permission has been granted to make these source spatial data publicly available, with credit to the relevant institutes. Where possible, individual survey blocks should be attributed to the institute responsible for the corresponding national survey effort:
+
+- **Faroe Islands:** [Faroe Marine Research Institute](https://www.hav.fo/famri/)
+- **Greenland (where applicable):** [Greenland Institute of Natural Resources](https://natur.gl/?lang=en)
+- **Iceland:** [Marine and Freshwater Research Institute](https://www.hafogvatn.is/en)
+- **Norway:** [Institute of Marine Research](https://www.hi.no/en)
+
+
 
 ---
 
@@ -624,21 +635,20 @@ The shapefile is used in this repository to reconstruct the relevant Southern He
 
 ## Williams et al. (2006) — Antarctic survey region
 
-**Provider:** Nat Kelly, with permission from the author Robert Williams
+**Provider:** Nat Kelly
 
 **Spatial input:**
 
 - `Williams_et_al_2006_survey_region.shp`
 
-This shapefile was provided directly by Nat Kelly through personal communication, with permission from Robert Williams to include and use the survey-region geometry.
-
-The spatial area corresponds to the survey region analysed in:
+This shapefile was provided directly by Nat Kelly through personal communication and corresponds to the survey region analysed in:
 
 > Williams, R., Hedley, S.L. and Hammond, P.S. 2006. *Modeling distribution and abundance of Antarctic baleen whales using ships of opportunity.* Ecology and Society 11(1): 1. http://www.ecologyandsociety.org/vol11/iss1/art1/.
 
 The shapefile is used in this repository to reconstruct the Southern Hemisphere survey region associated with the abundance analysis.
 
-**Redistribution status:** Permission has been obtained from the author, via Nat Kelly, for this shapefile to be included in the public repository.
+**Redistribution status:** Permission to redistribute the original spatial data has **not yet been obtained**. The original shapefile should therefore **not be included in the public repository** unless and until permission is confirmed. The workflow and documentation may still identify the source and describe how the spatial information was used.
+
 
 ---
 
@@ -654,6 +664,9 @@ Files in this section should be handled according to their redistribution status
 Where possible, the relevant publication, IWC Scientific Committee paper, data DOI or personal communication should be recorded so that users can understand the scientific context in which each spatial layer was produced.
 
 The repository does not claim ownership of any third-party dataset. All third-party data remain subject to the licences, terms of use and citation requirements of their original providers.
+
+
+Users who reuse **original source data supplied directly by researchers, institutes or organisations** should acknowledge both the original scientific source and the relevant data provider identified in this repository. As a matter of professional courtesy, users are also encouraged to contact the original data owners before reusing those source data and, where appropriate, to request permission. Any specific licence, attribution requirement or reuse condition associated with an original dataset takes precedence over this general guidance.
 
 ---
 
@@ -693,6 +706,14 @@ write_app_copies <- FALSE
 ```
 
 Users who maintain a local copy of the abundance-viewer application can enable this option and set `app_dir` to the appropriate local directory. It is not required to reproduce the spatial reference dataset produced by this repository.
+
+---
+
+## Quality-control and first-release disclaimer
+
+This is the **first public version** of the spatial component of the IWC Cetacean Abundance data product. Extensive quality assurance and quality control (QA/QC) have been undertaken during data preparation, spatial reconstruction, validation and release, and every effort has been made to identify and correct errors and inconsistencies.
+
+However, given the size, complexity and long history of the underlying abundance and spatial information, some issues may remain. Users are encouraged to report any errors, inconsistencies, missing provenance information or suggested corrections to **statistics@iwc.int**. Feedback will be used to improve future versions.
 
 ---
 ## Development and contributions
