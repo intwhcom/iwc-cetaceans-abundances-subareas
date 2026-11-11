@@ -20,19 +20,23 @@ subs2 <- subs2 %>%
 
 #ES = ESW+ESE
 ES <- subs2 %>% filter(subareas %in% c("ESW", "ESE")) %>% group_by() %>% dplyr::summarize() %>% mutate(accuracy = "accurate", survey = "NILS", large_area = "NA", species = "Mi", subareas = "ES", source = "from WKT,coordinates derived from IWC maps")
-m <- mappingf(ES); m
+mappingf(ES)
 
 #E = 'ESW','ESE','EB','EW', 'EN'
-E <- subs2 %>% filter(subareas %in% c('ESW','ESE','EB','EW', 'EN')) %>% group_by() %>% dplyr::summarize() %>% mutate(accuracy = "accurate", survey = "NILS", large_area = "NA", species = "Mi", subareas = "E", source = "from WKT,coordinates derived from IWC maps")
-m <- mappingf(E); m
+E <- subs2 %>% filter(subareas %in% c('ESW','ESE','EB','EW', 'EN')) %>% group_by() %>% dplyr::summarize() %>% mutate(accuracy = "accurate", large_area = "NA", species = "Mi", subareas = "E", source = "from WKT,coordinates derived from IWC maps")%>% mutate(survey = list(c("","NILS"))) %>% unnest(survey)
+mappingf(E)
+
+#C = "CG"  "CIP" "CIC" "CM"
+C <- subs2 %>% filter(subareas %in% c("CG","CIP","CIC","CM")) %>% group_by() %>% dplyr::summarize() %>% mutate(accuracy = "accurate", large_area = "NA", species = "Mi", subareas = "C", source = "from WKT,coordinates derived from IWC maps") %>% mutate(survey = list(c("","NILS"))) %>% unnest(survey)
+mappingf(C)
 
 #CG+CIP 'CG','CIP'
 CGCIP <- subs2 %>% filter(subareas %in% c('CG','CIP')) %>% group_by() %>% dplyr::summarize() %>% mutate(accuracy = "accurate", survey = "NASS", large_area = "NA", species = "Mi", subareas = "CG+CIP", source = "from WKT,coordinates derived from IWC maps")
-m <- mappingf(CGCIP); m
+mappingf(CGCIP)
 
 #E+CM 'CM','ESW','ESE','EB','EW', 'EN'
 ECM <- subs2 %>% filter(subareas %in% c('CM','ESW','ESE','EB','EW', 'EN')) %>% group_by() %>% dplyr::summarize() %>% mutate(accuracy = "accurate", survey = "NILS", large_area = "NA", species = "Mi", subareas = "E+CM", source = "from WKT,coordinates derived from IWC maps")
-m <- mappingf(ECM); m
+mappingf(ECM)
 
 #NE OPAREA
 NE_OPAREA <- st_read("NA-Sei/georeferenced/Palka2006and2020-ocean.shp") %>% st_intersection(ne_10m_ocean) %>%
@@ -54,7 +58,7 @@ ew13 <- st_read("NASS and NILS effort\\fromhino\\polygon_blocks_0813\\polygon_bl
 mappingf(ew13)
 
 #### output ####
-output <- dplyr::bind_rows(list(subs2, CGCIP, E, ECM, ES, NE_OPAREA,ew13, cgexceg, cgeg)) %>% select(subareas, geometry, accuracy, survey, large_area, species, source)
+output <- dplyr::bind_rows(list(subs2, CGCIP, E, ECM, ES, NE_OPAREA,ew13, cgexceg, cgeg, C)) %>% select(subareas, geometry, accuracy, survey, large_area, species, source)
 mappingf(output)
 View(output)
 #save 
