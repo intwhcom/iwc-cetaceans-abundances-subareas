@@ -34,6 +34,7 @@ Within each species folder, the R script documents how the spatial areas require
 Additional folders contain spatial information used across several species or surveys, as well as scripts for combining the individual species-level outputs into the final subareas reference dataset.
 
 The purpose of this repository is therefore not to provide a general distribution map for each cetacean species, but to document and reproduce the **specific spatial areas associated with abundance estimates included in the IWC Cetacean Abundance Database**.
+
 ---
 
 ## Third-party data 
