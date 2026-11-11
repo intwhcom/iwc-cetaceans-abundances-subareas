@@ -24,7 +24,7 @@ s <- c(
   'Isla Grande de Chiloe',
   'S. Australia'
 )
-out1 <- wktfunction(GEOM = g, Subareas = s) %>% select(subareas, geometry) %>% mutate(accuracy = "approximate", survey = "", large_area = c("SEP","IO","IO","IO","IO","SH"), species = "Blu", source = "made from approximate coordinates")
+out1 <- wktfunction(GEOM = g, Subareas = s) %>% select(subareas, geometry) %>% mutate(accuracy = "approximate", survey = "", large_area = c("IO","IO","IO","IO","SEP","SH"), species = "Blu", source = "made from approximate coordinates")
 mappingf(out1)
 
 #Chilean Northern Patagonia
@@ -37,7 +37,7 @@ CoC <- st_read("SH-Blu/georeferenced/coast of Chile.shp") %>% select(geometry) %
 mappingf(CoC)
 
 #New Zealand
-NZ <- eezland  %>% filter(UNION %in% c("New Zealand")) %>%
+NZ <- eezs  %>% filter(UNION %in% c("New Zealand")) %>%
   st_intersection(goas) %>% select(geometry) %>%
   mutate(accuracy = "approximate", survey = "", large_area = "SP", species = "Blu", subareas = c("New Zealand"), source = "EEZ derived from Union of the ESRI Country shapefile and the Exclusive Economic Zones (version 3) https://marineregions.org/sources.php#unioneezcountry")
 mappingf(NZ)
