@@ -64,6 +64,34 @@ mappingf(x=plus7)
 sen <- dplyr::bind_rows(list(NPareas,nc_dissolve)) %>% select(subareas, geometry) %>% filter(subareas %in% c('7','8','9')) %>% st_union() %>% st_sf() %>% mutate(subareas = "7+8+9", species = "Mi",accuracy = "accurate", large_area = "NP", source = "original coordinates derived from IWC maps and corrected manually in QGIS") %>% mutate(survey = list(c("","JD","JARPNII","KD","JARPN"))) %>% unnest(survey)
 mappingf(x=sen)
 
+#11+12
+st1112 <- st_read("NP-Mi/assessment-subareas/subareas 18032022.shp") %>% 
+  select(subareas, geometry) %>% filter(subareas %in% c("11","12SW","12NE")) %>% 
+  st_union() %>% st_sf() %>% 
+  mutate(subareas = "11+12", species = "Mi",accuracy = "accurate", large_area = "NP", source = "original coordinates derived from IWC maps and corrected manually in QGIS", survey="")
+mappingf(st1112)
+
+#7+8+9+11+12
+st712 <- st_read("NP-Mi/assessment-subareas/subareas 18032022.shp") %>% 
+  select(subareas, geometry) %>% filter(subareas %in% c("9N","7E","7CN","7WR","9","8","11","12SW","12NE","7CS")) %>% 
+  st_union() %>% st_sf() %>% 
+  mutate(subareas = "7+8+9+11+12", species = "Mi",accuracy = "accurate", large_area = "NP", source = "original coordinates derived from IWC maps and corrected manually in QGIS", survey="")
+mappingf(st712)
+
+#9+11+12 
+st912 <- st_read("NP-Mi/assessment-subareas/subareas 18032022.shp") %>% 
+  select(subareas, geometry) %>% filter(subareas %in% c("9N", "9", "11", "12SW", "12NE")) %>%
+  st_union() %>% st_sf() %>% 
+  mutate(subareas = "9+11+12", species = "Mi",accuracy = "accurate", large_area = "NP", source = "original coordinates derived from IWC maps and corrected manually in QGIS", survey="")
+mappingf(st912)
+
+#6+10      
+st610 <- st_read("NP-Mi/assessment-subareas/subareas 18032022.shp") %>% 
+  select(subareas, geometry) %>% filter(subareas %in% c("6W", "10W", "6E", "10E")) %>% 
+  st_union() %>% st_sf() %>% 
+  mutate(subareas = "6+10", species = "Mi",accuracy = "accurate", large_area = "NP", source = "original coordinates derived from IWC maps and corrected manually in QGIS", survey="")
+mappingf(st610)
+
 #### US west Coast ####
 subareasUSWC = c("US West Coast")
 strUSWC = c("POLYGON((-130 45.8,-124 47, -115 33.5, -117.5 33.5, -119 32, -123.5 30, -126.5 32, -130 40, -130 45.8))")
@@ -111,7 +139,7 @@ Hawaii <- eezs %>% filter(UNION == "Hawaii") %>% rename(subareas = UNION) %>%
 mappingf(Hawaii)
 
 #### final output ####
-output <- dplyr::bind_rows(list(NPareas,nc_dissolve,areas7wr,JARPN_9NS,Hawaii,areasUSWC2,areasEBSS2,areasAIAP2,plus7,sen)) %>% 
+output <- dplyr::bind_rows(list(NPareas,nc_dissolve,areas7wr,JARPN_9NS,Hawaii,areasUSWC2,areasEBSS2,areasAIAP2,plus7,sen,st1112,st912,st712,st610)) %>% 
   select(subareas, geometry,species,accuracy, survey, large_area, source)
 View(output)
 output %>% 
