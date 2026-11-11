@@ -10,7 +10,7 @@ subs2 = st_read("NA-Fin/assessment-subareas/NA-Fin-assessment-subareas.shp") %>%
 mappingf(subs2)
 
 #EG+WI+EIF
-EGWIEIF <- subs2 %>% filter(subareas %in% c('EG','WI','EIF')) %>% group_by() %>% dplyr::summarize() %>% mutate(accuracy = "accurate", survey = "", large_area = "NA", species = "Fin", subareas = "EG+WI+EIF", source = "from WKT,coordinates derived from IWC maps")
+EGWIEIF <- subs2 %>% filter(subareas %in% c('EG','WI','EIF')) %>% group_by() %>% dplyr::summarize() %>% mutate(accuracy = "accurate", survey = "", large_area = "NA", species = "Fin", subareas = "EG+WI+EIF", source = "from WKT,coordinates derived from IWC maps") %>% mutate(survey = list(c("","T-NASS","NASS","GL","NASS+NILS","NILS"))) %>% unnest(survey)
 m <- mappingf(EGWIEIF); m
 
 #NE OPAREA
@@ -40,7 +40,12 @@ ECNL <- st_read("NASS and NILS effort\\NASS and NILS effort\\TNASS 2007 blocks\\
 mappingf(ECNL)
 
 #US and canada ##
-GB <- GOM_GB %>% group_by() %>% dplyr::summarize() %>% st_transform(st_crs(subs2))
+GB <- GOM_GB %>%
+  ungroup() %>%
+  st_transform(32619) %>%  # UTM zone 19N, suitable for Gulf of Maine
+  st_make_valid() %>%
+  dplyr::summarise() %>%
+  st_transform(st_crs(subs2))
 GOM <- GOM_GB %>% filter(GARFO_ID %in% c("G000180", "1")) %>%
   st_transform(st_crs(subs2))  %>% 
   st_make_valid() %>% group_by() %>% dplyr::summarize() 
