@@ -24,13 +24,13 @@ ScotiaToGsL <- tnass %>% filter(PRIMARY %in% c('GULF', 'SCOTIA')) %>% st_make_va
 mappingf(ScotiaToGsL)
 
 #Newfoundld / Labrador
-NFLLAB <- tnass %>% filter(PRIMARY %in% c('NL-S', 'NL-E','NL-LAB')) %>% st_make_valid() %>% group_by() %>% dplyr::summarize() %>% mutate(accuracy = "accurate", survey = "NAISS", large_area = "NA", species = "Hbk", subareas = "NFL-LAB", source = "derived from data shared by NAMMCO")
+NFLLAB <- tnass %>% filter(PRIMARY %in% c('NL-S', 'NL-E','NL-LAB')) %>% st_make_valid() %>% group_by() %>% dplyr::summarize() %>% mutate(accuracy = "accurate", survey = "NASS", large_area = "NA", species = "Hbk", subareas = "NFL-LAB", source = "derived from data shared by NAMMCO")
 mappingf(NFLLAB)
 
 #W.Greenland ####
-wg87 <- st_read("NA-Hbk/georeferenced/wg87.shp") %>% mutate(accuracy = "approximate", survey = "GL", large_area = "NA", species = "Hbk", subareas = "WG-87", source = "georeferenced")
+wg87 <- st_read("NA-Hbk/georeferenced/wg87.shp") %>% mutate(accuracy = "approximate", large_area = "NA", species = "Hbk", subareas = "WG-87", source = "georeferenced") %>% mutate(survey = list(c("","NASS","GL"))) %>% unnest(survey)
 wg88 <- st_read("NA-Hbk/georeferenced/wg88.shp") %>% mutate(accuracy = "approximate", survey = "GL", large_area = "NA", species = "Hbk", subareas = "WG-88", source = "georeferenced")
-wg89 <- st_read("NA-Hbk/georeferenced/wg89.shp") %>% mutate(accuracy = "approximate", survey = "GL", large_area = "NA", species = "Hbk", subareas = "WG-89", source = "georeferenced")
+wg89 <- st_read("NA-Hbk/georeferenced/wg89.shp") %>% mutate(accuracy = "approximate", large_area = "NA", species = "Hbk", subareas = "WG-89", source = "georeferenced") %>% mutate(survey = list(c("","NASS","GL"))) %>% unnest(survey)
 wg93 <- st_read("NA-Hbk/georeferenced/Larsen 93 ocean.shp") %>% mutate(accuracy = "accurate", large_area = "NA", species = "Hbk", subareas = "WG-93", source = "georeferenced") %>% mutate(survey = list(c("NAISS", "","NASS","T-NASS","GL","IC"))) %>% unnest(survey)
 wg05 <-  st_read("NA-Sei\\georeferenced\\HeideJeyal2007-ocean.shp") %>% filter(subareas == "WG-05") %>% 
 mutate(accuracy = "approximate", large_area = "NA", species = "Hbk", source = "georeferenced") %>% mutate(survey = list(c("","NASS","T-NASS","GL","IC"))) %>% unnest(survey)
