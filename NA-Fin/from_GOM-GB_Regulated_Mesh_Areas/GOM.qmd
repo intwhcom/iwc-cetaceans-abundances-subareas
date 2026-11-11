@@ -1,0 +1,53 @@
+<!DOCTYPE qgis PUBLIC 'http://mrcc.com/qgis.dtd' 'SYSTEM'>
+<qgis version="3.38.1-Grenoble">
+  <identifier></identifier>
+  <parentidentifier></parentidentifier>
+  <language></language>
+  <type>dataset</type>
+  <title></title>
+  <abstract>This dataset depicts the boundaries of the GOM-GB Regulated Mesh Areas in ESRI shapefile format for the NOAA Fisheries Service’s Greater Atlantic Regional Fisheries Office (GARFO). This shapefile includes boundaries for the following Regulated Areas: - GOM Regulated Mesh Area - GB Regulated Mesh Area Because GIS projection and topology functions can change or generalize coordinates, these GIS files are considered to be approximate representations and are NOT an OFFICIAL record for the exact regulated area boundaries. For information on the official legal definition refer to the Use Constraints metadata section.
+
+Beginning in 2010 and in response to mounting requests for digital depictions of NMFS Regulated Areas in Northeast and Mid-Atlantic Waters (Regulated Areas), the NMFS Greater Atlantic Regional Fisheries Office (GARFO) Geographic Information Systems (GIS) Committee launched a project to standardize the development, publication and regular updating of GIS files depicting Regulated Area boundaries. This dataset is a product of that initiative. This dataset was created to depict the boundaries of NMFS Regulated Areas in Northeast and Mid-Atlantic Waters (Regulated Areas) only. For information on the proper use of the dataset refer to the Use Constraints metadata section.</abstract>
+  <keywords vocabulary="gmd:topicCategory">
+    <keyword>boundaries</keyword>
+    <keyword>Biology</keyword>
+    <keyword>Atlantic</keyword>
+  </keywords>
+  <contact>
+    <contactAddress>
+      <type>mailing and physical address</type>
+      <address>55 Great Republic Drive</address>
+      <city>Gloucester</city>
+      <administrativearea>MA</administrativearea>
+      <postalcode>01930</postalcode>
+      <country></country>
+    </contactAddress>
+    <name></name>
+    <organization></organization>
+    <position></position>
+    <voice>978-282-9341</voice>
+    <fax>978-281-9135</fax>
+    <email>doug.potts@noaa.gov</email>
+    <role>Point of contact</role>
+  </contact>
+  <links/>
+  <dates/>
+  <fees></fees>
+  <constraints type="Access">None.</constraints>
+  <rights>*** Attribution *** Whenever NMFS material is reproduced and re-disseminated, we request that users attribute the material appropriately. Pursuant to 17 U.S.C. 403, parties who produce copyrighted works consisting predominantly of material created by the Federal Government are encouraged to provide notice with such work(s) identifying the U.S. Government material incorporated and stating that such material is not subject to copyright protection. Please cite Regulated Area datasets as follows, with the appropriate information substituted for all text in {CURLY BRACKETS}: NOAA Fisheries Service. NMFS Regulated Areas in Northeast and Mid-Atlantic Waters. {SHAPEFILE TITLE} [Shapefile]. Gloucester, MA: National Oceanic and Atmospheric Administration (NOAA), National Marine Fisheries Service (NMFS), Greater Atlantic Regional Fisheries Office (GARFO) [producer] {SHAPEFILE PUBLICATION DATE}. http://www.greateratlantic.fisheries.noaa.gov/gis. *** No Warranty*** The user assumes the entire risk related to its use of these data. NMFS is providing these data "as is," and NMFS disclaims any and all warranties, whether express or implied, including (without limitation) any implied warranties of merchantability or fitness for a particular purpose. No warranty expressed or implied is made regarding the accuracy or utility of the data on any other system or for general or scientific purposes, nor shall the act of distribution constitute any such warranty. It is strongly recommended that careful attention be paid to the contents of the metadata file associated with these data to evaluate dataset limitations, restrictions or intended use. In no event will NMFS be liable to you or to any third party for any direct, indirect, incidental, consequential, special or exemplary damages or lost profit resulting from any use or misuse of this data. *** Proper Usage *** The information on government servers are in the public domain, unless specifically annotated otherwise, and may be used freely by the public. Before using information obtained from this server, special attention should be given to the date and time of the data and products being displayed. This information shall not be modified in content and then presented as official government material. This dataset was created to depict the boundaries of NMFS Regulated Areas in Northeast and Mid-Atlantic Waters (Regulated Areas) only. The dataset should not be used for a legal definition. The dataset should not be used to infer information regarding the existence or details of other marine features or resources, including, but not limited to, navigable waters, coastlines, bathymetry, submerged features, or man-made structures. Users assume responsibility for determining the appropriate use of this dataset. *** Not the Legal Definition *** This Geographic Information System (GIS) dataset is not the legal definition of the Regulated Area. The description published in the U.S. Code of Federal Regulations is the only legal definition. This dataset and metadata document provide a broad overview of a subset of applicable fishing regulations, restrictions and requirements; it is not a substitute for the actual regulations. Users are encouraged to read the applicable regulations in conjunction with use of this dataset. *** Temporal Considerations *** Regulated Area boundary definitions are subject to change or modification. Published datasets may represent historic, current, or future Regulated Areas. When changes to fishing regulations affect this dataset, it will be archived and replaced by an updated version as soon as feasible. Approved Regulated Area boundaries may also be published prior to their effective date. It is the user’s responsibility to ensure the applicable Regulated Area boundaries are being used. *** Shorelines/Base Layers *** The accuracy of this dataset is dependent upon the accuracy and resolution of the datasets (e.g., shoreline, bathymetry, shared administrative boundaries) used in the creation process. Source datasets used are specified in the metadata. These data sources were selected for their suitability to a broad audience, and may not be suitable for specific uses requiring higher-resolution information. Coastlines change. Unless otherwise noted, where the NOAA Medium Resolution Shoreline is used, assume the regulatory boundary reaches the most current coastline delineation available.</rights>
+  <encoding></encoding>
+  <crs>
+    <spatialrefsys nativeFormat="Wkt">
+      <wkt></wkt>
+      <proj4></proj4>
+      <srsid>0</srsid>
+      <srid>0</srid>
+      <authid></authid>
+      <description></description>
+      <projectionacronym></projectionacronym>
+      <ellipsoidacronym></ellipsoidacronym>
+      <geographicflag>false</geographicflag>
+    </spatialrefsys>
+  </crs>
+  <extent/>
+</qgis>
